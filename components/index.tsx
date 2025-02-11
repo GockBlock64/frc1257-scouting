@@ -94,19 +94,18 @@ export default function Home(): JSX.Element {
     if (data.position === "Middle") positionFormat = "middle"
     else if (data.position === "Far") positionFormat = "far"
 
-    let cagePositionFormat = "shallow"
-    if (data.position === "Deep") cagePositionFormat = "deep"
-
     let endPositionFormat = "none"
     if (data.end_position === "Parked") endPositionFormat = "park"
-    if (data.end_position === "Shallow Climb") endPositionFormat = "shallow climb"
-    else if (data.end_position === "Deep Climb") endPositionFormat = "deep climb"
+    else if (data.end_position === "Onstage") endPositionFormat = "onstage"
 
     let preloadFormat = "FALSE"
     if(data.preload) preloadFormat = "TRUE"
 
     let mobilityFormat = "FALSE"
     if(data.mobility) mobilityFormat = "FALSE"
+
+    let trapFormat = "FALSE"
+    if(data.trap) trapFormat = "TRUE"
 
     let malfunctionFormat = "FALSE"
     if(data.malfunction) malfunctionFormat = "TRUE"
@@ -116,33 +115,25 @@ export default function Home(): JSX.Element {
     const output = [
       Number(data.team_number),
       positionFormat,
-      cagePositionFormat,
       Number(data.match_number),
       `${month}/${day}/${year}`,
       preloadFormat,
       data.initials.toUpperCase(),
       data.event,
       mobilityFormat,
-      Number(data.auto_coral1),
-      Number(data.auto_coral2),
-      Number(data.auto_coral3),
-      Number(data.auto_coral4),
-      Number(data.auto_coral_miss),
-      Number(data.auto_processor),
-      Number(data.auto_net),
-      Number(data.auto_processor_miss),
-      Number(data.auto_net_miss),
-      Number(data.tele_coral1),
-      Number(data.tele_coral2),
-      Number(data.tele_coral3),
-      Number(data.tele_coral4),
-      Number(data.tele_coral_miss),
-      Number(data.tele_processor),
-      Number(data.tele_net),
-      Number(data.tele_processor_miss),
-      Number(data.tele_net_miss),
+      Number(data.auto_amp),
+      Number(data.auto_speaker),
+      Number(data.auto_amp_miss),
+      Number(data.auto_speaker_miss),
+      Number(data.tele_amp),
+      Number(data.tele_speaker),
+      Number(data.tele_amp_miss),
+      Number(data.tele_speaker_miss),
       endPositionFormat,
+      trapFormat,
+      Number(data.harmony),
       malfunctionFormat,
+      data.notes,
     ]
 
     // This string is used to store the data in local storage

@@ -54,6 +54,12 @@ const PreMatch = ({}: PreMatchProps): JSX.Element => {
             options={["Near", "Middle", "Far"]}
             className="w-40 sm:w-64"
           />
+          <DropDown
+            title="Cage Position"
+            id="cage_position"
+            options={["Shallow", "Deep"]}
+            className="w-40 sm:w-64"
+          />
           <NumberInput
             title="Team Number"
             id="team_number"
