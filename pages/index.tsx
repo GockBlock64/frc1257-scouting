@@ -39,6 +39,7 @@ export type FormValues = {
   tele_net_miss: number
   end_position: string
   malfunction: boolean
+  notes: string
 }
 
 // Default values for each field
@@ -71,6 +72,7 @@ const initialValues: FormValues = {
   tele_net_miss: 0,
   end_position: "None",
   malfunction: false,
+  notes: ""
 }
 
 export default function Home(): JSX.Element {

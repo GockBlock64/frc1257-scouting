@@ -26,7 +26,7 @@ const MultipleChoice = (props: MultipleChoiceProps): JSX.Element => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center border-2 border-gray-600 p-4">
+      <div className="flex flex-col items-center justify-center p-4">
         <div className="text-md md:text-lg lg:text-2xl mb-2">{props.title}</div>
         <div className="flex flex-col items-center justify-center">
           <select

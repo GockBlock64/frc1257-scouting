@@ -50,7 +50,7 @@ const NumberButton = (props: NumberButtonProps): JSX.Element => {
   }, [props.title])
 
   return (
-      <div className="flex flex-row items-center justify-center p-4 pt-3 w-[156px] lg:w-[24rem] border-2 border-gray-600">
+      <div className="flex flex-row items-center justify-center p-4 pt-3 w-[156px] lg:w-[24rem]">
         <div className="grow-0 mb-4 text-lg lg:text-3xl w-15 mr-2">{text?.()}</div>
         <button
           type="button"

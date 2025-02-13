@@ -40,7 +40,7 @@ const TeleOp = ({}: teleProps): JSX.Element => {
           <NumberButton
             id="tele_coral4"
             title="L4"
-            className="border-purple-500 bg-purple-500"
+            className="border-green-500 bg-green-500"
             min={0}
             max={40}
           />
@@ -63,14 +63,14 @@ const TeleOp = ({}: teleProps): JSX.Element => {
         <NumberButton
           id="tele_processor"
           title="Proc."
-          className="border-purple-500 bg-purple-500"
+          className="border-green-500 bg-green-500"
           min={0}
           max={40}
         />
         <NumberButton
           id="tele_net"
           title="Net"
-          className="border-purple-500 bg-purple-500"
+          className="border-green-500 bg-green-500"
           min={0}
           max={40}
         />

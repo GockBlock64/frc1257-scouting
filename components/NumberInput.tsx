@@ -17,7 +17,7 @@ const NumberInput = (props: NumberInputProps): JSX.Element => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center p-4 border-2 border-gray-600">
+      <div className="flex flex-col items-center justify-center p-4">
         <div className="text-lg lg:text-2xl mb-2">{props.title}</div>
         <input
           type="number"

@@ -2,10 +2,10 @@ import CheckBox from "@/components/CheckBox"
 import NumberButton from "@/components/NumberButton"
 import Vertical from "@/components/Vertical"
 
-interface AutoProps {}
+interface autoProps {}
 
 // Autonomous section of the app
-const Auto = ({}: AutoProps): JSX.Element => {
+const Auto = ({}: autoProps): JSX.Element => {
   return (
     <>
       <div className="flex items-center justify-center mt-16 mb-4 text-7xl font-semibold">
@@ -43,7 +43,7 @@ const Auto = ({}: AutoProps): JSX.Element => {
           <NumberButton
             id="auto_coral4"
             title="L4"
-            className="border-purple-500 bg-purple-500"
+            className="border-green-500 bg-green-500"
             min={0}
             max={40}
           />
@@ -66,14 +66,14 @@ const Auto = ({}: AutoProps): JSX.Element => {
         <NumberButton
           id="auto_processor"
           title="Proc."
-          className="border-purple-500 bg-purple-500"
+          className="border-green-500 bg-green-500"
           min={0}
           max={40}
         />
         <NumberButton
           id="auto_net"
           title="Net"
-          className="border-purple-500 bg-purple-500"
+          className="border-green-500 bg-green-500"
           min={0}
           max={40}
         />
