@@ -2,7 +2,7 @@ import { FormValues } from "@/pages"
 import { useEffect, useState } from "react"
 import { useFormContext } from "react-hook-form"
 
-interface NumberButtonProps {
+interface VerticalProps {
   title: string
   id: keyof FormValues
   className?: string
@@ -10,7 +10,7 @@ interface NumberButtonProps {
   max: number
 }
 
-const NumberButton = (props: NumberButtonProps): JSX.Element => {
+const Vertical = (props: VerticalProps): JSX.Element => {
   const { register, setValue, getValues } = useFormContext<FormValues>()
 
   const incrementValue = () => {
@@ -50,25 +50,25 @@ const NumberButton = (props: NumberButtonProps): JSX.Element => {
   }, [props.title])
 
   return (
-      <div className="flex flex-row items-center justify-center p-4 pt-3 w-[156px] lg:w-[24rem] border-2 border-gray-600">
+      <div className="flex flex-col items-center justify-center p-4 pt-3 w-[156px] lg:w-[24rem] border-2 border-gray-600">
         <div className="grow-0 mb-4 text-lg lg:text-3xl w-15 mr-2">{text?.()}</div>
         <button
           type="button"
           onClick={incrementValue}
-          className={`h-14 w-16 text-3xl rounded-l-lg border-4 ${props.className}`}
+          className={`h-14 w-16 text-3xl rounded-t-lg border-4 ${props.className}`}
         >
         +
         </button>
         <input
           type="text"
           {...register(props.id)}
-          className={`text-center h-14 w-20 text-4xl font-bold border-x-4 ${props.className} !bg-neutral-900 rounded-none`}
+          className={`text-center h-14 w-16 text-4xl font-bold border-x-4  ${props.className} !bg-neutral-900 rounded-none`}
           readOnly
         ></input>
         <button
           type="button"
           onClick={decrementValue}
-          className={`h-14 w-16 text-3xl rounded-r-lg border-4 flex items-center justify-center ${props.className}`}
+          className={`h-14 w-16 text-3xl rounded-b-lg border-4 flex items-center justify-center ${props.className}`}
         >
           -
         </button>
@@ -76,4 +76,4 @@ const NumberButton = (props: NumberButtonProps): JSX.Element => {
   )
 }
 
-export default NumberButton
+export default Vertical
