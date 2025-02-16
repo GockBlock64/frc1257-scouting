@@ -34,11 +34,14 @@ const PostGame = (): JSX.Element => {
 
   return (
     <>
+      <div className="flex items-center justify-center mt-16 mb-4 text-7xl font-semibold">
+        Post Game
+      </div>
       {/* Strategy Scouting Section */}
       <div className="flex items-center justify-center mt-16 mb-4 text-4xl font-semibold">
         Behavioral
       </div>
-      <div className="flex flex-col w-min mx-auto border-2 border-gray-600 p-4">
+      <div className="flex flex-col w-[35rem] mx-auto border-2 border-gray-600 p-4">
         <Controller
           name="strategy_member"
           control={control}
@@ -60,14 +63,14 @@ const PostGame = (): JSX.Element => {
           <NumberButton
             id="stability"
             title="Stability"
-            className="border-green-500 bg-green-500"
+            className="border-purple-500 bg-purple-500"
             min={0}
             max={40}
           />
           <NumberButton
             id="intake"
             title="Intake"
-            className="border-purple-500 bg-purple-500"
+            className="border-green-500 bg-green-500"
             min={0}
             max={40}
           />
@@ -81,7 +84,7 @@ const PostGame = (): JSX.Element => {
           <NumberButton
             id="cycle_consistency"
             title="Cycle Consistency"
-            className="border-purple-500 bg-purple-500"
+            className="border-green-500 bg-green-500"
             min={0}
             max={40}
           />
@@ -107,8 +110,8 @@ const PostGame = (): JSX.Element => {
         <TextInput
           title="Notes (If you're asking, I made it not accept commas on purpose)"
           id="notes"
-          className="w-full"
-          rows={3}
+          className="w-[50rem]"
+          rows={5}
           validChars={/[a-zA-Z0-9 \./"';:()?!]/}
         />
       </div>

@@ -8,7 +8,7 @@ const EndGame = ({}: EndGameProps): JSX.Element => {
   const { register, watch, setValue } = useFormContext();
   return (
     <>
-      <div className="flex items-center justify-center mt-16 mb-4 text-4xl font-semibold">
+      <div className="flex items-center justify-center mt-16 mb-4 text-7xl font-semibold">
         End Game
       </div>
       <div className="flex flex-col border-2 border-gray-600 w-96 md:w-1/2 mx-auto mb-16">
