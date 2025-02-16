@@ -127,8 +127,6 @@ export default function Home(): JSX.Element {
     let mobilityFormat = "FALSE"
     if(data.mobility) mobilityFormat = "FALSE"
 
-    let malfunctionFormat = "FALSE"
-    if(data.malfunction) malfunctionFormat = "TRUE"
 
     let strategyMemberFormat= "FALSE"
     if(data.strategy_member) strategyMemberFormat= "TRUE"
@@ -169,7 +167,7 @@ export default function Home(): JSX.Element {
       Number(data.tele_processor_miss),
       Number(data.tele_net_miss),
       endPositionFormat,
-      malfunctionFormat,
+      data.malfunction,
       strategyMemberFormat,
       Number(data.speed),
       Number(data.stability),
