@@ -1,3 +1,4 @@
+import { useState } from "react";
 import CheckBox from "@/components/CheckBox"
 import NumberButton from "@/components/NumberButton"
 import Vertical from "@/components/Vertical"
@@ -6,13 +7,14 @@ interface autoProps {}
 
 // Autonomous section of the app
 const Auto = ({}: autoProps): JSX.Element => {
+  const [isMobility, setIsMobility] = useState(false);
   return (
     <>
       <div className="flex items-center justify-center mt-16 mb-4 text-7xl font-semibold">
         Autonomous
       </div>
       <div className="flex flex-col w-min mx-auto border-2 border-gray-600">
-        <CheckBox title="Mobility?" id="mobility" />
+        <CheckBox title="Mobility?" id="mobility" checked={isMobility} setValue={setIsMobility} />
       </div>
       <div className="flex items-center justify-center mt-8 mb-4 text-4xl font-semibold ">
         Coral

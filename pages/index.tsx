@@ -2,6 +2,7 @@ import snailIcon from "@/assets/snail_logo.png"
 import AppBar from "@/sections/AppBar"
 import Auto from "@/sections/Auto"
 import EndGame from "@/sections/EndGame"
+import PostGame from "@/sections/PostGame"
 import PreMatch from "@/sections/PreMatch"
 import TeleOp from "@/sections/TeleOp"
 import Head from "next/head"
@@ -40,6 +41,14 @@ export type FormValues = {
   end_position: string
   malfunction: boolean
   notes: string
+  strategy_member: boolean
+  speed: number
+  stability: number
+  intake: number
+  driver_skill: number
+  cycle_consistency: number
+  versatility: number
+  archetype: string
 }
 
 // Default values for each field
@@ -72,7 +81,15 @@ const initialValues: FormValues = {
   tele_net_miss: 0,
   end_position: "None",
   malfunction: false,
-  notes: ""
+  notes: "",
+  strategy_member: false,
+  speed: 5,
+  stability: 5,
+  intake: 5,
+  driver_skill: 5,
+  cycle_consistency: 5,
+  versatility: 5,
+  archetype: "High Coral",
 }
 
 export default function Home(): JSX.Element {
@@ -113,6 +130,14 @@ export default function Home(): JSX.Element {
     let malfunctionFormat = "FALSE"
     if(data.malfunction) malfunctionFormat = "TRUE"
 
+    let strategyMemberFormat= "FALSE"
+    if(data.strategy_member) strategyMemberFormat= "TRUE"
+
+    let archetypeFormat = "High Coral"
+    if(data.archetype) archetypeFormat= "Low Coral"
+    if(data.archetype) archetypeFormat= "Algae"
+    if(data.archetype) archetypeFormat= "Defense"
+
     // Output that will be written to a data string
     // Formatted for the spreadsheet
     const output = [
@@ -145,6 +170,14 @@ export default function Home(): JSX.Element {
       Number(data.tele_net_miss),
       endPositionFormat,
       malfunctionFormat,
+      strategyMemberFormat,
+      Number(data.speed),
+      Number(data.stability),
+      Number(data.intake),
+      Number(data.driver_skill),
+      Number(data.cycle_consistency),
+      Number(data.versatility),
+      archetypeFormat,
     ]
 
     // This string is used to store the data in local storage
@@ -208,6 +241,7 @@ export default function Home(): JSX.Element {
           <Auto />
           <TeleOp />
           <EndGame />
+          <PostGame />
 
           {/* Submit button */}
           <div className="flex flex-row items-center justify-center">

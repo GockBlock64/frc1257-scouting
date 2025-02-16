@@ -2,10 +2,12 @@ import CheckBox from "@/components/CheckBox"
 import DropDown from "@/components/DropDown"
 import NumberInput from "@/components/NumberInput"
 import TextInput from "@/components/TextInput"
+import { useState } from "react"
 
 interface PreMatchProps {}
 
 const PreMatch = ({}: PreMatchProps): JSX.Element => {
+  const [isPreloaded, setIsPreloaded] = useState(false);
   return (
     <>
       <div className="flex items-center justify-center mt-16 mb-4 text-4xl font-semibold">
@@ -71,6 +73,8 @@ const PreMatch = ({}: PreMatchProps): JSX.Element => {
             title="Preload"
             id="preload"
             className="w-49 sm:w-74 h-26 lg:h-auto"
+            checked={isPreloaded}
+            setValue={setIsPreloaded}
           />
         </div>
       </div>

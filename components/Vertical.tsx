@@ -51,11 +51,11 @@ const Vertical = (props: VerticalProps): JSX.Element => {
 
   return (
       <div className="flex flex-col items-center justify-center p-4 pt-3 w-[156px] lg:w-[24rem]">
-        <div className="grow-0 mb-4 text-lg lg:text-3xl w-15 mr-2">{text?.()}</div>
+        <div className="grow-0 mb-4 text-4xl w-15 mr-2">{text?.()}</div>
         <button
           type="button"
           onClick={incrementValue}
-          className={`h-14 w-16 text-3xl rounded-t-lg border-4 ${props.className}`}
+          className={`h-14 w-16 text-4xl rounded-t-lg border-4 ${props.className}`}
         >
         +
         </button>
@@ -68,7 +68,7 @@ const Vertical = (props: VerticalProps): JSX.Element => {
         <button
           type="button"
           onClick={decrementValue}
-          className={`h-14 w-16 text-3xl rounded-b-lg border-4 flex items-center justify-center ${props.className}`}
+          className={`h-14 w-16 text-4xl rounded-b-lg border-4 flex items-center justify-center ${props.className}`}
         >
           -
         </button>

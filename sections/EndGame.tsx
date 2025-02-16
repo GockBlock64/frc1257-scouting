@@ -1,3 +1,4 @@
+import { useState } from "react";
 import CheckBox from "@/components/CheckBox"
 import MultipleChoice from "@/components/MultipleChoice"
 import NumberButton from "@/components/NumberButton"
@@ -6,6 +7,7 @@ import TextInput from "@/components/TextInput"
 interface EndGameProps {}
 
 const EndGame = ({}: EndGameProps): JSX.Element => {
+  const [malfunction, setMalfunction] = useState(false);
   return (
     <>
       <div className="flex items-center justify-center mt-16 mb-4 text-4xl font-semibold">
@@ -24,7 +26,7 @@ const EndGame = ({}: EndGameProps): JSX.Element => {
             ]}
             className="w-24 md:w-32 lg:w-40 xl:w-64"
           />
-//          <CheckBox title="Malfunction?" id="malfunction" />
+         <CheckBox title="Malfunction?" id="malfunction" checked={malfunction} setValue={setMalfunction} /> 
         </div>
       </div>
     </>

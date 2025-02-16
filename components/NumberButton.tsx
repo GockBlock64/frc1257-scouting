@@ -62,7 +62,7 @@ const NumberButton = (props: NumberButtonProps): JSX.Element => {
         <input
           type="text"
           {...register(props.id)}
-          className={`text-center h-14 w-20 text-4xl font-bold border-x-4 ${props.className} !bg-neutral-900 rounded-none`}
+          className={`text-center h-14 w-20 text-4xl font-bold border-y-4 ${props.className} !bg-neutral-900 rounded-none`}
           readOnly
         ></input>
         <button
