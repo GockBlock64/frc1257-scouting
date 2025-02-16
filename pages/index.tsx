@@ -42,13 +42,13 @@ export type FormValues = {
   malfunction: boolean
   notes: string
   strategy_member: boolean
-  speed: number
-  stability: number
-  intake: number
-  driver_skill: number
-  cycle_consistency: number
-  versatility: number
-  archetype: string
+  speed: number | string,
+  stability: number | string,
+  intake: number | string,
+  driver_skill: number | string,
+  cycle_consistency: number | string,
+  versatility: number | string,
+  archetype: string,
 }
 
 // Default values for each field
@@ -89,7 +89,7 @@ const initialValues: FormValues = {
   driver_skill: 5,
   cycle_consistency: 5,
   versatility: 5,
-  archetype: "High Coral",
+  archetype: "",
 }
 
 export default function Home(): JSX.Element {
@@ -114,27 +114,30 @@ export default function Home(): JSX.Element {
     else if (data.position === "Far") positionFormat = "far"
 
     let cagePositionFormat = "shallow"
-    if (data.position === "Deep") cagePositionFormat = "deep"
+    if (data.cage_position === "Deep") cagePositionFormat = "deep"
 
     let endPositionFormat = "none"
-    if (data.end_position === "Parked") endPositionFormat = "park"
-    if (data.end_position === "Shallow Climb") endPositionFormat = "shallow climb"
-    else if (data.end_position === "Deep Climb") endPositionFormat = "deep climb"
+    if (data.end_position === "Parked") endPositionFormat = "parked"
+    if (data.end_position === "Shallow") endPositionFormat = "shallow"
+    else if (data.end_position === "Deep") endPositionFormat = "deep"
 
     let preloadFormat = "FALSE"
     if(data.preload) preloadFormat = "TRUE"
 
     let mobilityFormat = "FALSE"
-    if(data.mobility) mobilityFormat = "FALSE"
+    if(data.mobility) mobilityFormat = "TRUE"
 
+    let malfunctionFormat= "FALSE"
+    if(data.malfunction) malfunctionFormat= "TRUE"
 
     let strategyMemberFormat= "FALSE"
     if(data.strategy_member) strategyMemberFormat= "TRUE"
 
-    let archetypeFormat = "High Coral"
-    if(data.archetype) archetypeFormat= "Low Coral"
-    if(data.archetype) archetypeFormat= "Algae"
-    if(data.archetype) archetypeFormat= "Defense"
+    let archetypeFormat = "N/A"
+    if(data.archetype == "High Coral") archetypeFormat= "high coral"
+    if(data.archetype == "Low Coral") archetypeFormat= "low coral"
+    if(data.archetype == "Algae") archetypeFormat= "algae"
+    if(data.archetype == "Defense") archetypeFormat= "defense"
 
     // Output that will be written to a data string
     // Formatted for the spreadsheet
@@ -176,6 +179,7 @@ export default function Home(): JSX.Element {
       Number(data.cycle_consistency),
       Number(data.versatility),
       archetypeFormat,
+      data.notes,
     ]
 
     // This string is used to store the data in local storage
