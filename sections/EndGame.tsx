@@ -24,13 +24,8 @@ const EndGame = ({}: EndGameProps): JSX.Element => {
             ]}
             className="w-24 md:w-32 lg:w-40 xl:w-64"
           />
-          <CheckBox title="Malfunction?" id="malfunction" />
+//          <CheckBox title="Malfunction?" id="malfunction" />
         </div>
-        <TextInput
-          title="Notes"
-          id="notes"
-          validChars={/[a-zA-Z0-9!@#\$%\^&\*()\.]/}
-        />
       </div>
     </>
   )
