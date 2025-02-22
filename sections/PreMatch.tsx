@@ -8,11 +8,11 @@ interface PreMatchProps {}
 const PreMatch = ({}: PreMatchProps): JSX.Element => {
   return (
     <>
-      <div className="flex items-center justify-center mt-16 mb-4 text-4xl font-semibold">
-        Pre-Match
+      <div className="flex inline-flex mx-60 text-center justify-center mt-16 mb-4 text-5xl font-semibold">
+        Pregame
       </div>
-      <div className="flex flex-row lg:flex-col border-2 border-gray-600 mx-auto mb-16 items-center justify-center w-min">
-        <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col inline-flex lg:flex-col mx-10 items-center justify-center w-min ">
+        <div className="flex flex-row lg:flex-row">
           <TextInput
             title="Initials"
             id="initials"
@@ -47,13 +47,7 @@ const PreMatch = ({}: PreMatchProps): JSX.Element => {
             max={1000}
           />
         </div>
-        <div className="flex flex-col lg:flex-row">
-          <DropDown
-            title="Position"
-            id="position"
-            options={["Near", "Middle", "Far"]}
-            className="w-40 sm:w-64"
-          />
+        <div className="flex flex-row lg:flex-row">
           <DropDown
             title="Cage Position"
             id="cage_position"

@@ -143,7 +143,6 @@ export default function Home(): JSX.Element {
     // Formatted for the spreadsheet
     const output = [
       Number(data.team_number),
-      positionFormat,
       cagePositionFormat,
       Number(data.match_number),
       `${month}/${day}/${year}`,
@@ -246,7 +245,7 @@ export default function Home(): JSX.Element {
           <PostGame />
 
           {/* Submit button */}
-          <div className="flex flex-row items-center justify-center">
+          <div className="flex flex-row gap-4 mx-60 border-0 border-gray-600">
             <button
               type="submit"
               className="p-2 mb-8 text-3xl border-2 border-gray-600 rounded-md"

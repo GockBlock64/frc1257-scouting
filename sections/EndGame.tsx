@@ -8,10 +8,11 @@ const EndGame = ({}: EndGameProps): JSX.Element => {
   const { register, watch, setValue } = useFormContext();
   return (
     <>
+    <div className="max-w-full w-screen inline-block mx-28 justify-center">
       <div className="flex items-center justify-center mt-16 mb-4 text-7xl font-semibold">
         End Game
       </div>
-      <div className="flex flex-col border-2 border-gray-600 w-96 md:w-1/2 mx-auto mb-16">
+      <div className="flex flex-col border-0 border-gray-600 w-96 md:w-1/2 mx-auto mb-0">
         <div className="flex flex-row items-center justify-center gap-4">
           <MultipleChoice
             title="End Position"
@@ -30,6 +31,7 @@ const EndGame = ({}: EndGameProps): JSX.Element => {
           /> 
         </div>
       </div>
+    </div>
     </>
   )
 }

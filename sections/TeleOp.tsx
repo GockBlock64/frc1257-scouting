@@ -8,13 +8,14 @@ interface teleProps {}
 const TeleOp = ({}: teleProps): JSX.Element => {
   return (
     <>
-      <div className="flex items-center justify-center mt-16 mb-4 text-7xl font-semibold">
-        Tele-Operated
+    <div className="max-w-full w-screen inline-block mx-28 justify-center">
+    <div className="flex items-center mt-16 mb-4 text-7xl font-semibold">
+        TeleOperated
       </div>
       <div className="flex items-center justify-center mt-8 mb-4 text-4xl font-semibold ">
         Coral
       </div>
-      <div className="flex flex-row justify-center gap-4">
+      <div className="flex justify-center gap-3 border-0">
         <div className="flex flex-col border-0 border-gray-600">
           <NumberButton
             id="tele_coral1"
@@ -48,7 +49,7 @@ const TeleOp = ({}: teleProps): JSX.Element => {
         <div className="flex flex-col border-0 border-gray-600 w-">
           <Vertical
             id="tele_coral_miss"
-            title="Coral Miss"
+            title="Miss"
             className="border-purple-500 bg-purple-500"
             min={0}
             max={40}
@@ -58,7 +59,7 @@ const TeleOp = ({}: teleProps): JSX.Element => {
       <div className="flex items-center justify-center mt-16 mb-4 text-4xl font-semibold">
         Algae
       </div>
-      <div className="flex flex-row w-min gap-4 mx-auto border-0 border-gray-600">
+      <div className="flex justify-center gap-3 border-0">
       <div className="flex flex-col border-0 border-gray-600">
         <NumberButton
           id="tele_processor"
@@ -70,7 +71,7 @@ const TeleOp = ({}: teleProps): JSX.Element => {
         <NumberButton
           id="tele_net"
           title="Net"
-          className="border-green-500 bg-green-500"
+          className="border-purple-500 bg-purple-500"
           min={0}
           max={40}
         />
@@ -78,20 +79,21 @@ const TeleOp = ({}: teleProps): JSX.Element => {
        <div className="flex flex-col border-0 border-gray-600">
         <NumberButton
           id="tele_processor_miss"
-          title="Proc. Miss"
-          className="border-purple-500 bg-purple-500"
+          title="Miss"
+          className="border-green-500 bg-green-500"
           min={0}
           max={40}
         />
         <NumberButton
           id="tele_net_miss"
-          title="Net Miss"
+          title="Miss"
           className="border-purple-500 bg-purple-500"
           min={0}
           max={40}
         />
         </div>
       </div>
+    </div>
     </>
   )
 }

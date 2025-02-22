@@ -34,6 +34,7 @@ const PostGame = (): JSX.Element => {
 
   return (
     <>
+    <div className="max-w-full w-screen inline-block mx-28 justify-center">
       <div className="flex items-center justify-center mt-16 mb-4 text-7xl font-semibold">
         Post Game
       </div>
@@ -41,7 +42,7 @@ const PostGame = (): JSX.Element => {
       <div className="flex items-center justify-center mt-16 mb-4 text-4xl font-semibold">
         Behavioral
       </div>
-      <div className="flex flex-col w-[35rem] mx-auto border-2 border-gray-600 p-4">
+      <div className="flex flex-row items-center justify-center gap-4">
         <Controller
           name="strategy_member"
           control={control}
@@ -52,7 +53,7 @@ const PostGame = (): JSX.Element => {
       </div>
 
       {isStrategyMember && (
-        <div className="flex flex-col w-min mx-auto border-2 border-gray-600 p-4 mt-4">
+        <div className="flex flex-col items-center border-0 border-gray-600 p-4 mt-4">
           <NumberButton
             id="speed"
             title="Speed"
@@ -110,10 +111,11 @@ const PostGame = (): JSX.Element => {
         <TextInput
           title="Notes (If you're asking, I made it not accept commas on purpose)"
           id="notes"
-          className="w-[50rem]"
+          className="w-[30rem]"
           rows={5}
           validChars={/[a-zA-Z0-9 \./"';:()?!]/}
         />
+      </div>
       </div>
     </>
   );

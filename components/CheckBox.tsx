@@ -12,7 +12,7 @@ const CheckBox = ({ title, id, className }: CheckBoxProps): JSX.Element => {
 
   return (
     <div className={`flex flex-row items-center justify-center py-4 px-4 ${className}`}>
-      <div className="mr-4 text-lg lg:text-4xl">{title}</div>
+      <div className="mr-4 text-3xl">{title}</div>
       <input
         type="checkbox"
         {...register(id)}

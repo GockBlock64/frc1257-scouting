@@ -50,8 +50,8 @@ const NumberButton = (props: NumberButtonProps): JSX.Element => {
   }, [props.title])
 
   return (
-      <div className="flex flex-row items-center justify-center p-4 pt-3 w-[156px] lg:w-[24rem]">
-        <div className="grow-0 mb-4 text-lg lg:text-3xl w-15 mr-2">{text?.()}</div>
+      <div className="flex flex-row items-center justify-center p-1 pt-3 w-[300px] lg:w-[24rem]">
+        <div className="grow-0 mb-4 text-3xl w-15 mr-2">{text?.()}</div>
         <button
           type="button"
           onClick={incrementValue}
@@ -62,7 +62,7 @@ const NumberButton = (props: NumberButtonProps): JSX.Element => {
         <input
           type="text"
           {...register(props.id)}
-          className={`text-center h-14 w-20 text-4xl font-bold border-y-4 ${props.className} !bg-neutral-900 rounded-none`}
+          className={`text-center h-14 w-14 text-4xl font-bold border-y-4 ${props.className} !bg-neutral-900 rounded-none`}
           readOnly
         ></input>
         <button
