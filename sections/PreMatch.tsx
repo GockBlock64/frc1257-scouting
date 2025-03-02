@@ -59,7 +59,7 @@ const PreMatch = ({}: PreMatchProps): JSX.Element => {
             id="team_number"
             className="w-40 sm:w-64"
             min={1}
-            max={10000}
+            max={100000}
           />
           <CheckBox
             title="Preload"
